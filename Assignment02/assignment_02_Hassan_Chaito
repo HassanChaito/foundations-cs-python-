@@ -1,0 +1,89 @@
+counter=0
+#function for choice.1
+def countDigits(nb):
+  global counter
+  if(nb==0):
+    return counter
+  else:
+    counter+=1
+    return countDigits(nb//10)
+#################
+max=0
+i=0
+#function for choice.2
+def findMax(list):
+  global max
+  global i
+  if(i<len(list)):
+    if(list[i]>max):
+      max=list[i]
+    i+=1
+    return findMax(list)
+  else:
+    return max
+counter2=0
+hText="""
+<html>
+<head>
+<title>My Website</title>
+</head>
+<body>
+<h1>Welcome to my website!</h1>
+<p>Here you'll find information about me and my hobbies.</p>
+<h2>Hobbies</h2>
+<ul>
+<li>Playing guitar</li>
+<li>Reading books</li>
+<li>Traveling</li>
+<li>Writing cool h1 tags</li>
+</ul>
+</body>
+</html>"""
+k=1
+#function for choice.3.1
+def countTag(tag):
+  global counter2
+  global k
+  if hText[k+1:k+len(tag)+1]==tag and hText[k]=="<" and hText[k+len(tag)+1]==">":
+     counter2+=1
+  k+=1
+  if(k>len(hText)):
+    return counter2
+  else:
+    return countTag(tag)
+j=0
+while(j==0):
+  print("1. Count Digits\n2. Find Max\n3.1. Count Tags\n3.2. Count Normalized Columns\n4. Exit\n- - - - - - - - - - - - - - - ")
+  choice=float(input("Enter a choice: "))
+  if(choice==1):
+    nb=input("Enter a number: ")
+    while(not nb.isnumeric()):
+      nb=input("Enter a number: ")
+    print("The number compose of "+str(countDigits(int(nb)))+" digits")
+    print('')
+    counter=0
+  elif(choice==2):
+    nb=' '
+    list=[]
+    while(nb!=''):
+      nb=input("Enter an integer (or just press enter to stop):")
+      if(nb==''):
+        break
+      while(not nb.isnumeric()):
+        nb=input("integer please ~_~ (or just press enter to stop):")
+      list.append(int(nb))
+    print(findMax(list))
+    print('')
+    max=0
+    i=0
+  elif(choice==3.1):
+    tag=input("Enter a tag(html, head,...ect): ")
+    print(countTag(tag))
+    print("")
+    counter2=0
+    k=1
+  elif(choice==3.2):
+    print("Coming soon :D!\n")
+  elif(choice==4):
+    j=1
+    print("Thank you for using CHAITO app!")
