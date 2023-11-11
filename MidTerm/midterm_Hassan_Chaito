@@ -1,3 +1,5 @@
+import urllib. request as r  #ref:https://stackoverflow.com
+
 Tab=[{'woah':'what'}]
 #choice_1_ft
 def addTab(Title,Url):
@@ -18,6 +20,12 @@ def closeTab(a):
         else:                           #cond for a
             print(Tab[len(Tab)-1],'was removed')
             Tab.remove(Tab[len(Tab)-1])
+#choice_3_ft , #ref:https://stackoverflow.com
+def displayHtml(b):
+    b=int(b)
+    page = r. urlopen(Tab[0]['woah'])  #EDIIIIT~
+    print(page. read())
+
 print('''
 1. Open Tab
 2. Close Tab
