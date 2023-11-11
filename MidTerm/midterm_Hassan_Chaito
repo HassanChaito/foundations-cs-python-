@@ -23,7 +23,7 @@ def closeTab(a):
 #choice_3_ft , #ref:https://stackoverflow.com
 def displayHtml(b):
     b=int(b)
-    page = r. urlopen(Tab[0]['woah'])  #EDIIIIT~
+    page = r. urlopen(Tab[0]['woah'])  #EDIIIIT~by index
     print(page. read())
 
 print('''
@@ -58,3 +58,6 @@ while choice !='9':
     if choice =='2':
         remove_Tab = input('Enter the tab you want to remove by index(start with 0) : ')    #need edit
         closeTab(remove_Tab)
+    if choice=='3':
+        url_Display=input('Enter the url that you want to display as html : ')
+        displayHtml(url_Display)
