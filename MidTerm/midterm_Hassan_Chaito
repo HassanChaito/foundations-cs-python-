@@ -33,13 +33,13 @@ while choice !='9':
     choice=input('Enter your choice : ')
     while not choice.isnumeric():
         print('please enter an integer from 1 to 9 :')
-if choice =='1':
+    if choice =='1':
         add_Title=input('enter the title you want to add : ')
         # add_Url=input('Enter the url you want to add : ')
         for i in range(999):
             try:
                 url=input('enter a valid url : ')
-                displayHtml(url)#for choice 3 ^^^^^^^^^~^
+                displayHtml(url)
             except ValueError:
                 print('invalid url ~_~')
                 # url=input('please enter a valid url ^_^ : ')
@@ -47,3 +47,6 @@ if choice =='1':
                 print('something wrong !')
             else:
                 print('bye')
+    if choice =='2':
+        remove_Tab = input('Enter the tab you want to remove by index(start with 0) : ')    #need edit
+        closeTab(remove_Tab)
