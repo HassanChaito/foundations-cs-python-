@@ -8,3 +8,8 @@ print('''
 7. Save Tabs
 8. Import Tabs
 9. Exit''')
+choice=''
+while choice !='9':
+    choice=input('Enter your choice : ')
+    while not choice.isnumeric():
+        print('please enter an integer from 1 to 9 :')
