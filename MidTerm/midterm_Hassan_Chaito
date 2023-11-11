@@ -1,4 +1,4 @@
-Tab=[]
+Tab=[{'woah':'what'}]
 #choice1_ft
 def addTab(Title,Url):
     Tab.append({})
@@ -19,3 +19,17 @@ while choice !='9':
     choice=input('Enter your choice : ')
     while not choice.isnumeric():
         print('please enter an integer from 1 to 9 :')
+if choice =='1':
+        add_Title=input('enter the title you want to add : ')
+        # add_Url=input('Enter the url you want to add : ')
+        for i in range(999):
+            try:
+                url=input('enter a valid url : ')
+                displayHtml(url)#for choice 3 ^^^^^^^^^~^
+            except ValueError:
+                print('invalid url ~_~')
+                # url=input('please enter a valid url ^_^ : ')
+            except Exception:
+                print('something wrong !')
+            else:
+                print('bye')
