@@ -1,9 +1,23 @@
 Tab=[{'woah':'what'}]
-#choice1_ft
+#choice_1_ft
 def addTab(Title,Url):
     Tab.append({})
     Tab[len(Tab)-1][Title]=Url
     return Tab
+#choice_2_ft
+def closeTab(a):
+    if len(Tab)==0:         #cond for len
+        print('There is no Tab ~')
+    elif len(Tab)==1:       #cond for len
+        print(Tab[0],'was removed')
+        Tab.remove(Tab[0])
+    else:                   #cond for len
+        if a in range(len(Tab)-2):      #cond for a inter len cond!
+            print(Tab[a],'was removed')
+            Tab.remove(Tab[a])
+        else:                           #cond for a
+            print(Tab[len(Tab)-1],'was removed')
+            Tab.remove(Tab[len(Tab)-1])
 print('''
 1. Open Tab
 2. Close Tab
