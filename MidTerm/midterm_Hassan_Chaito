@@ -114,3 +114,7 @@ while choice !='9':
         print('do not forget to reverse the backslash to forwardslash in your path')
         save_path=input('enter the path you want to save in your win : ')
         saveTabs(save_path)
+        try:
+            saveTabs(save_path)
+        except FileNotFoundError:
+            save_path=input('your path is wrong ,try again :')
