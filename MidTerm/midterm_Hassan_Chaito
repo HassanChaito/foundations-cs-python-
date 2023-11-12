@@ -68,11 +68,14 @@ while choice !='9':
         remove_Tab = input('Enter the tab you want to remove by index(start with 0) : ')    #need edit
         closeTab(remove_Tab)
     if choice=='3':
-        url_Display=input('Enter the url that you want to display as html : ')
-        while  (not url_Display.isnumeric()) or (int(url_Display) >=len(Tab)) :
-            url_Display=input('please choose integer between 0 to'+' '+str(len(Tab))+' : ')
+        if len(Tab)==0:
+            print('there is no tab to display')
         else:
-            displayHtml(url_Display)
+            url_Display=input('Enter the url that you want to display as html : ')
+            while  (not url_Display.isnumeric()) or (int(url_Display) >=len(Tab)) :
+                url_Display=input('please choose integer between 0 and'+' '+str(len(Tab)-1)+' : ')
+            else:
+                displayHtml(url_Display)
     if choice=='4':
         if len(Tab)==0:
             print('there is no tab')
