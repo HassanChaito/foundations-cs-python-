@@ -89,7 +89,12 @@ while choice !='9':
                 parent_index=input('Enter an integer between 0 and '+str(len(Tab)-1)+' : ')
             else:
                 parent_index=int(parent_index)
-                nested_tab=input('enter a title for the nested tab of '+str(Tab[parent_index]['Title'])) 
+                nested_title=input('enter a title for the nested tab of '+str(Tab[parent_index]['Title'])+' :')
+                nested_url=input('enter the sub url you want to add :')
+                while is_url(nested_url)==False:
+                    nested_url=input('enter a valid url : ')
+                else:
+                    addNestedTab(parent_index,nested_title,nested_url)
     if choice=='6':
         Tab.clear()
         print('all tab was closed')
