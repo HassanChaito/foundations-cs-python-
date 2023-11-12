@@ -67,3 +67,5 @@ while choice !='9':
             url_Display=input('please choose integer between 0 to'+' '+str(len(Tab))+' : ')
         else:
             displayHtml(url_Display)
+    if choice=='4':
+        print(Tab)
