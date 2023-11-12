@@ -42,6 +42,11 @@ def displayHtml(b):
 def addNestedTab(parent_index,nested_title,nested_url):
     Tab[parent_index]['Nested']=nested_title
     Tab[parent_index]['Nested_Url']=nested_url
+#choice_7_ft
+def saveTabs(path):
+    save_file=open(path+'/savefile.json','w')
+    json.dump(Tab,save_file,indent=5)
+    save_file.close()
 
 print('''
 1. Open Tab
