@@ -33,7 +33,7 @@ def closeTab(a):
 #choice_3_ft , #ref:https://stackoverflow.com
 def displayHtml(b):
     b=int(b)
-    page = r. urlopen(Tab[0]['woah'])  #EDIIIIT~by index
+    page = r. urlopen(Tab[b]['Url'])  #Done?
     print(page. read())
 
 print('''
@@ -63,4 +63,7 @@ while choice !='9':
         closeTab(remove_Tab)
     if choice=='3':
         url_Display=input('Enter the url that you want to display as html : ')
-        displayHtml(url_Display)
+        while  (not url_Display.isnumeric()) or (int(url_Display) >=len(Tab)) :
+            url_Display=input('please choose integer between 0 to'+' '+str(len(Tab))+' : ')
+        else:
+            displayHtml(url_Display)
