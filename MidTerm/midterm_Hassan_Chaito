@@ -131,3 +131,5 @@ while choice !='9':
             print('your path is wrong ,try again :')
         except PermissionError:
             print('no permission for loading this file:')
+    if choice=='9':
+        print('bye')
