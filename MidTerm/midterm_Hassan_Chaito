@@ -96,8 +96,11 @@ while choice !='9':
                 nested_url=input('enter the sub url you want to add :')
                 while is_url(nested_url)==False:
                     nested_url=input('enter a valid url : ')
-                else:
-                    addNestedTab(parent_index,nested_title,nested_url)
+                    check_sub_url=Tab[parent_index]['Url']
+                    while nested_url[0:len(check_sub_url)]!=check_sub_url:
+                        nested_url=input('the sub url should be got from the parent url or same:')
+                    else:
+                        addNestedTab(parent_index,nested_title,nested_url)
     if choice=='6':
         Tab.clear()
         print('all tab was closed')
