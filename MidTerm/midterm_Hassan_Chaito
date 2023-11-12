@@ -47,7 +47,12 @@ def saveTabs(path):
     save_file=open(path+'/savefile.json','w')
     json.dump(Tab,save_file,indent=5)
     save_file.close()
-
+#choice_8_ft
+def loadTab(path):
+    file=open(path)
+    tabs=json.load(file)
+    print(tabs)
+    file.close()
 print('''
 1. Open Tab
 2. Close Tab
