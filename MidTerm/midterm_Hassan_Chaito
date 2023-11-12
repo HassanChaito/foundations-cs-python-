@@ -111,6 +111,5 @@ while choice !='9':
         Tab.clear()
         print('all tab was closed')
     if choice=='7':
-        tab_json=json.dumps(Tab,indent=1)
-        with open('tab_json.txt','w') as file:
-            file.write(tab_json)
+        save_path=input('enter the path you want to save in your win : ')
+        saveTabs(save_path)
