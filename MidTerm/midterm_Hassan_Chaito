@@ -118,3 +118,5 @@ while choice !='9':
             saveTabs(save_path)
         except FileNotFoundError:
             save_path=input('your path is wrong ,try again :')
+    if choice=='8':
+        open_path=input('enter the path you want to open from your win : ')
