@@ -128,4 +128,6 @@ while choice !='9':
         try:
             loadTab(open_path)
         except FileNotFoundError:
-            save_path=input('your path is wrong ,try again :')
+            print('your path is wrong ,try again :')
+        except PermissionError:
+            print('no permission for loading this file:')
