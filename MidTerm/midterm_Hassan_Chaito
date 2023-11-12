@@ -76,8 +76,16 @@ while choice !='9':
             for i in range(len(Tab)):
                 print(Tab[i]['Title'])
                 print('    '+str(Tab[i]['Nested']))
-    # if choice=='5':
-    #     print('coming soon')
+    if choice=='5':
+        parent_index=input('Enter the index of parent tab : ')
+        if len(Tab)==0:
+            print('there is no parent tab ')
+        else:
+            while (not parent_index.isnumeric()) or (int(parent_index)>=len(Tab)):
+                parent_index=input('Enter an integer between 0 and '+str(len(Tab)-1)+' : ')
+            else:
+                parent_index=int(parent_index)
+                nested_tab=input('enter a title for the nested tab of '+str(Tab[parent_index]['Title'])) 
     if choice=='6':
         Tab.clear()
         print('all tab was closed')
