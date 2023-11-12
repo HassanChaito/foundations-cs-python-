@@ -70,7 +70,12 @@ while choice !='9':
         else:
             displayHtml(url_Display)
     if choice=='4':
-        print(Tab)
+        if len(Tab)==0:
+            print('there is no tab')
+        else:
+            for i in range(len(Tab)):
+                print(Tab[i]['Title'])
+                print('    '+str(Tab[i]['Nested']))
     # if choice=='5':
     #     print('coming soon')
     if choice=='6':
