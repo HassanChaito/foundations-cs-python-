@@ -111,5 +111,6 @@ while choice !='9':
         Tab.clear()
         print('all tab was closed')
     if choice=='7':
+        print('do not forget to reverse the backslash to forwardslash in your path')
         save_path=input('enter the path you want to save in your win : ')
         saveTabs(save_path)
