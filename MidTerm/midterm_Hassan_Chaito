@@ -1,6 +1,15 @@
 import urllib. request as r  #ref:https://stackoverflow.com
-
+from urllib.parse import urlparse
 Tab=[{'woah':'what'}]
+
+#validityOfUrl
+def is_url(url):
+  try:
+    result = urlparse(url)
+    return all([result.scheme, result.netloc])
+  except ValueError:
+    return False
+
 #choice_1_ft
 def addTab(Title,Url):
     Tab.append({})
