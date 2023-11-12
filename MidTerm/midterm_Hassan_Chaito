@@ -69,3 +69,8 @@ while choice !='9':
             displayHtml(url_Display)
     if choice=='4':
         print(Tab)
+    # if choice=='5':
+    #     print('coming soon')
+    if choice=='6':
+        Tab.clear()
+        print('all tab was closed')
