@@ -37,6 +37,10 @@ def displayHtml(b):
     b=int(b)
     page = r. urlopen(Tab[b]['Url'])  #Done?
     print(page. read())
+#choice_5_ft
+def addNestedTab(parent_index,nested_title,nested_url):
+    Tab[parent_index]['Nested']=nested_title
+    Tab[parent_index]['Nested_Url']=nested_url
 
 print('''
 1. Open Tab
