@@ -4,7 +4,8 @@ Tab=[{'woah':'what'}]
 #choice_1_ft
 def addTab(Title,Url):
     Tab.append({})
-    Tab[len(Tab)-1][Title]=Url
+    Tab[len(Tab)-1]['Title']=Title
+    Tab[len(Tab)-1]['Url']=Url
     return Tab
 #choice_2_ft
 def closeTab(a):
