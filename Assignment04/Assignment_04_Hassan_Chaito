@@ -82,7 +82,7 @@ class History:
       t.next = self.header
       self.header = t
       self.size += 1
-taskm=TaskManager()
+# taskm=TaskManager()
 # t=Task(5,4)
 # t1=Task(3,2)
 # t2=Task(1,4)
@@ -95,3 +95,7 @@ taskm=TaskManager()
 #taskm.findId(3)
 #ht=History()
 #ht.push()
+choice=''
+while choice !=7:
+    if choice==1:
+        input
