@@ -54,48 +54,61 @@ class TaskManager:
               t.setNext(current)
               self.size+=1
     def findId(self,id):
-        current=self.header
-        print("test")
-        print(current.id)
-        o_id=current.id
-        while o_id!=id and current!=None:
-            current=current.getNext()
-            o_id=current.id
-        if o_id==id:
-            print("desc was",current.getDescription())
+        if id==0:
+            print('no id equal to 0')
         else:
-            print('id was not found')
-    def find_Highest_P(self):
-        current=self.header
-        # highest_task=Task
-        while (current.getNext() != None ):
-          current2 = current
-          while (current.next != None ):
-              if current2.getPriority()>current.getPriority():
-                  highest_task=current2
-          current = current.next
-class History:
-    def __init__(self):
-      self.header = None
-      self.size = 0
-    def push(self, t):
-      t.next = self.header
-      self.header = t
-      self.size += 1
-# taskm=TaskManager()
-# t=Task(5,4)
-# t1=Task(3,2)
-# t2=Task(1,4)
-# t3=Task(1,4)
-# t3=Task(1,4)
-# print(t3.task_id)
-#taskm.task_queue(5,4)
-#taskm.task_queue(2,5)
-#taskm.task_queue(6,1)
-#taskm.findId(3)
-#ht=History()
-#ht.push()
+
+            current=self.header
+        # print("test")
+        # print(current.id)
+            o_id=current.id
+            while o_id!=id and current!=None:
+                current=current.getNext()
+                o_id=current.id
+            if o_id==id:
+                print("desc of yout id is :",current.getDescription())
+            else:
+                print('id was not found')
+#     def find_Highest_P(self):
+#         current=self.header
+#         # highest_task=Task
+#         while (current.getNext() != None ):
+#           current2 = current
+#           while (current.next != None ):
+#               if current2.getPriority()>current.getPriority():
+#                   highest_task=current2
+#           current = current.next
+# class History:
+#     def __init__(self):
+#       self.header = None
+#       self.size = 0
+#     def push(self, t):
+#       t.next = self.header
+#       self.header = t
+#       self.size += 1
+
+tsk=TaskManager()
+# # t=Task(5,4)
+# # t1=Task(3,2)
+# # t2=Task(2,6)
+# # t3=Task(1,4)
+# # t3=Task(1,4)
+# # print(t3.task_id)
+# taskm.task_queue('hi',4)
+# taskm.task_queue('bye',5)
+# taskm.task_queue('ok',1)
+# taskm.findId(0)
+# #ht=History()
+# #ht.push()
 choice=''
-while choice !=7:
-    if choice==1:
-        input
+while choice !='7':
+    choice=input('please enter a choice : ')
+    if choice=='1':
+        desc=input('please enter the description of the task : ')
+        priority=input('please enter the priority of the task : ')
+        while not priority.isnumeric():
+            priority=input('please enter a nb for the priority of the task : ')
+        else:
+            tsk.task_queue(desc,priority)
+            t=Task(desc,priority)
+            print({t.getDescription():t.getPriority()},'was add')
