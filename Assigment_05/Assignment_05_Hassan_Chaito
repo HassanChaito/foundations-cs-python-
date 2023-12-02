@@ -8,6 +8,7 @@ class FNode:
         self.parent=None
 class FTree:
     lst=[]
+    lst_name=[]
     def __init__(self):
         self.root=FNode('A2','2B','1992-6-11')
     def Search(self,s,node):
@@ -132,6 +133,23 @@ class FTree:
 
                     else:
                         print(min_lst[0].data['Name'],'is the',counter-1,' times grand father of',max_lst[0].data['Name'])
+    def ch4(self):
+        print('coming soon ~')
+    def getName(self,node,name):
+        # lst_name=[]
+        name=str(name)
+        c=0
+        if node==None:
+            return
+        else:
+            self.lst_name.append(node.data['Name'])
+            for child in node.children:
+                self.getName(child,name)
+            for i in range(len(self.lst_name)):
+                if self.lst_name[i]==name:
+                    c+=1
+        print(name,'was founded',c,'times')
+            
                 
 
 def main():
@@ -146,12 +164,12 @@ def main():
     ''')
     tree=FTree()
     choice=''
-    tree.addchild(tree.root,"2","1","1992-6-15")
-    a=FNode("2","1","1992-6-15")
-    tree.addchild(a,"ha","ba","1992-6-18")
-    c=FNode("ha","ba","1992-6-18")
-    tree.addchild(tree.root,"4","3","1992-6-21")
-    b=FNode("4","3","1992-6-21")
+    # tree.addchild(tree.root,"2","1","1992-6-15")
+    # a=FNode("2","1","1992-6-15")
+    # tree.addchild(a,"ha","ba","1992-6-18")
+    # c=FNode("ha","ba","1992-6-18")
+    # tree.addchild(tree.root,"4","3","1992-6-21")
+    # b=FNode("4","3","1992-6-21")
     while choice!='6':
         choice=input('please enter a choice : ')
         if choice=='1':
@@ -210,7 +228,14 @@ def main():
             f2=FNode(child_name2,child_family2,child_birth2)
 
             tree.findRelationship(f1,f2)
+        # if choice=='4':
+        #      tree.findRelationship(c,b)
         if choice=='4':
-            tree.findRelationship(c,b)
+            tree.ch4()
+        if choice=='5':
+            name_count=input('enter a name : ')
+            tree.getName(tree.root,name_count)
+        if choice=='6':
+            print('bye')
 
 main()
